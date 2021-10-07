@@ -1,6 +1,7 @@
 package piotrholda.axonexample;
 
 import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateMember;
 import org.axonframework.spring.stereotype.Aggregate;
@@ -24,5 +25,10 @@ public class Flight {
     @CommandHandler
     public void handle(ScheduleFlightCommand command) {
         apply(new FlightScheduledEvent(command.getFlightId()));
+    }
+
+    @EventSourcingHandler
+    public void on(FlightScheduledEvent event) {
+        flightId = event.getFlightId();
     }
 }

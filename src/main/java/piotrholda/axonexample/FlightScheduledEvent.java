@@ -7,4 +7,8 @@ public class FlightScheduledEvent {
     public FlightScheduledEvent(String flightId) {
         this.flightId = flightId;
     }
+
+    public String getFlightId() {
+        return flightId;
+    }
 }
