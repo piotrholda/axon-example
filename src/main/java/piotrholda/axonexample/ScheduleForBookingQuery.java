@@ -7,4 +7,8 @@ public class ScheduleForBookingQuery {
     public ScheduleForBookingQuery(String bookingId) {
         this.bookingId = bookingId;
     }
+
+    public String getBookingId() {
+        return bookingId;
+    }
 }
