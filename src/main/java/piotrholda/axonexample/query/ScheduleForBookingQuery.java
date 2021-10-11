@@ -1,4 +1,4 @@
-package piotrholda.axonexample;
+package piotrholda.axonexample.query;
 
 public class ScheduleForBookingQuery {
 

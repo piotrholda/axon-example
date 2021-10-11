@@ -1,4 +1,4 @@
-package piotrholda.axonexample;
+package piotrholda.axonexample.command;
 
 import org.axonframework.modelling.command.EntityId;
 

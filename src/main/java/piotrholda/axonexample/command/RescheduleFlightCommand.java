@@ -1,11 +1,14 @@
-package piotrholda.axonexample;
+package piotrholda.axonexample.command;
 
-public class FlightScheduledEvent {
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
+public class RescheduleFlightCommand {
+
+    @TargetAggregateIdentifier
     private final String flightId;
     private final String gateNumber;
 
-    public FlightScheduledEvent(String flightId, String gateNumber) {
+    public RescheduleFlightCommand(String flightId, String gateNumber) {
         this.flightId = flightId;
         this.gateNumber = gateNumber;
     }
