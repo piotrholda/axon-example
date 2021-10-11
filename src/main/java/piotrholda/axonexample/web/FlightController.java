@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
-public class FlieghtController {
+public class FlightController {
 
     @Autowired
     private CommandGateway commandGateway;
@@ -36,7 +36,7 @@ public class FlieghtController {
     }
 
     @GetMapping
-    public CompletableFuture<List<FlightSchedule>> fidAllFlights() {
+    public CompletableFuture<List<FlightSchedule>> findAllFlights() {
         return queryGateway.query(new FindAllFlightsQuery(), ResponseTypes.multipleInstancesOf(FlightSchedule.class));
     }
 }
