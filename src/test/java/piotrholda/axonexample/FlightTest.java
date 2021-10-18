@@ -2,7 +2,6 @@ package piotrholda.axonexample;
 
 import org.axonframework.test.aggregate.AggregateTestFixture;
 import org.axonframework.test.aggregate.FixtureConfiguration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import piotrholda.axonexample.command.Flight;
@@ -38,4 +37,15 @@ class FlightTest {
                 .when(new RescheduleFlightCommand(flightId, gateNumber2))
                 .expectEvents(new FlightRescheduledEvent(flightId, gateNumber2));
     }
+
+    @Test
+    void shouldNotApplyEventWhenRescheduleFlightToTheSameGate() {
+        String flightId = "AM1";
+        String gateNumber = "A01";
+
+        flightFixture.given(new FlightScheduledEvent(flightId, gateNumber))
+                .when(new RescheduleFlightCommand(flightId, gateNumber))
+                .expectNoEvents();
+    }
+
 }
