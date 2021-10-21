@@ -1,11 +1,11 @@
 package piotrholda.axonexample.command;
 
 
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
+import org.axonframework.commandhandling.RoutingKey;
 
 public class ScheduleFlightCommand {
 
-    @TargetAggregateIdentifier
+    @RoutingKey
     private final String flightId;
     private final String gateNumber;
 
