@@ -33,8 +33,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: piotrholda/private
-        tags: axon-example
-        addLatest: true
+        tags: axon-example, latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
